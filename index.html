@@ -81,12 +81,19 @@
                 margin: 0; /* Remove a margem lateral */
             }
         }
+
+        /* Ajuste para computadores */
+        @media (min-width: 769px) {
+            .product-container {
+                margin-right: 50px; /* Aumenta a margem direita para separar imagem e texto */
+            }
+        }
     </style>
     <script>
         function mostrarDataAtual() {
             const hoje = new Date();
             const dataFormatada = hoje.toLocaleDateString('pt-BR');
-            document.getElementById('').innerText = dataFormatada;
+            document.getElementById('dataAtual').innerText = dataFormatada;
         }
         window.onload = mostrarDataAtual;
     </script>
@@ -112,3 +119,5 @@
     </div>
 </body>
 </html>
+
+
