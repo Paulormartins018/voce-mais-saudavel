@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortesto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #131212;
+            color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .pulsar {
+            animation: pulseEffect 1.5s infinite;
+        }
+        @keyframes pulseEffect {
+            0% { transform: scale(0.97); }
+            50% { transform: scale(1); }
+            100% { transform: scale(0.97); }
+        }
+        .blur {
+            margin: 10px;
+            backdrop-filter: blur(20px);
+        }
+        .button {
+            background: #25D366; /* Cor verde do WhatsApp */
+            border: 3px solid #128C7E;
+            border-radius: 15px;
+            padding: 25px 50px;
+            color: #FFFFFF;
+            font-family: Sora, sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            animation: fadeIn 1s;
+            box-shadow: 0 7px 48px -20px #128C7E;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .product-img {
+            width: 413px;
+            margin-right: 20px;
+            animation: fadeInUp 1s;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            max-width: 400px;
+            margin: auto;
+        }
+        ul li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        ul li i {
+            color: #FF7830;
+            font-size: 23px;
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        function mostrarDataAtual() {
+            const hoje = new Date();
+            const dataFormatada = hoje.toLocaleDateString('pt-BR');
+            document.getElementById('').innerText = dataFormatada;
+        }
+        window.onload = mostrarDataAtual;
+    </script>
+</head>
+<body>
+    <div style="padding: 10px 0; background-color: #161615;">
+        <h1 class="pulsar"> <span id="dataAtual"></span></h1>
+    </div>
+    <div style="padding: 50px; background: radial-gradient(circle at top center, #FF976026 76%, #000000);">
+        <h2 style="font-family: Sora, sans-serif; font-size: 18px; font-weight: 400; letter-spacing: 3px; animation: fadeIn 1s;">MAXIMIZE O SEU DESEMPENHO NA CAMA!</h2>
+        <h1 style="font-family: Sora, sans-serif; font-size: 35px; font-weight: 700; text-transform: uppercase; line-height: 1.1; animation: fadeIn 1s;">O estimulante para homens Aumentar em 10 vezes a sua virilidade!</h1>
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 50px;">
+            <img src="fortesto.png" alt="Imagem do Produto" class="product-img">
+            <ul>
+                <li><i class="fas fa-check-circle"></i> ✅ MAIS POTÊNCIA NA CAMA</li>
+                <li><i class="fas fa-check-circle"></i> ✅ ORGASMOS MAIS LONGOS</li>
+                <li><i class="fas fa-check-circle"></i> ✅ AUMENTO DA TESTOSTERONA</li>
+                <li><i class="fas fa-check-circle"></i> ✅ FÓRMULA 100% NATURAL</li>
+                <li><i class="fas fa-check-circle"></i> ✅ SEM EFEITOS COLATERAIS</li>
+            </ul>
+        </div>
+        <a href="https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto" class="button pulsar">EU QUERO O FORTESTO</a>
+    </div>
+</body>
+</html>
