@@ -43,10 +43,15 @@
             from { opacity: 0; }
             to { opacity: 1; }
         }
+        .product-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
         .product-img {
-            width: 100%; /* Make the image responsive */
-            max-width: 413px; /* Set a maximum width */
-            margin: 0 auto; /* Center the image */
+            width: 413px;
+            margin-right: 20px;
             animation: fadeInUp 1s;
         }
         ul {
@@ -66,13 +71,14 @@
             margin-right: 10px;
         }
 
-        /* Media Query for smaller screens */
+        /* Media Query para dispositivos móveis */
         @media (max-width: 768px) {
-            .product-img {
-                max-width: 300px; /* Adjust maximum width for smaller screens */
+            .product-container {
+                flex-direction: column; /* Altera a direção para coluna */
+                align-items: center;
             }
-            ul {
-                max-width: 300px; /* Adjust maximum width for smaller screens */
+            .product-img {
+                margin: 0; /* Remove a margem lateral */
             }
         }
     </style>
@@ -92,7 +98,7 @@
     <div style="padding: 50px; background: radial-gradient(circle at top center, #FF976026 76%, #000000);">
         <h2 style="font-family: Sora, sans-serif; font-size: 18px; font-weight: 400; letter-spacing: 3px; animation: fadeIn 1s;">MAXIMIZE O SEU DESEMPENHO NA CAMA!</h2>
         <h1 style="font-family: Sora, sans-serif; font-size: 35px; font-weight: 700; text-transform: uppercase; line-height: 1.1; animation: fadeIn 1s;">O estimulante para homens Aumentar em 10 vezes a sua virilidade!</h1>
-        <div style="margin-top: 50px;">
+        <div class="product-container">
             <img src="fortesto.png" alt="Imagem do Produto" class="product-img">
             <ul>
                 <li><i class="fas fa-check-circle"></i> ✅ MAIS POTÊNCIA NA CAMA</li>
@@ -103,5 +109,6 @@
             </ul>
         </div>
         <a href="https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto" class="button pulsar">EU QUERO O FORTESTO</a>
-
-
+    </div>
+</body>
+</html>
