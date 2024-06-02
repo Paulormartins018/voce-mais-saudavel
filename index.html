@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fortesto</title>
+    <script>
+        window.onload = function() {
+            window.location.href = "https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto";
+        };
+    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -95,14 +100,6 @@
             }
         }
     </style>
-    <script>
-        function mostrarDataAtual() {
-            const hoje = new Date();
-            const dataFormatada = hoje.toLocaleDateString('pt-BR');
-            document.getElementById('l').innerText = dataFormatada;
-        }
-        window.onload = mostrarDataAtual;
-    </script>
 </head>
 <body>
     <div style="padding: 10px 0; background-color: #161615;">
@@ -126,6 +123,7 @@
     </div>
 </body>
 </html>
+
 
 
 
