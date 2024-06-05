@@ -4,11 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fortesto</title>
-    <script>
-        window.onload = function() {
-            window.location.href = "https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto";
-        };
-    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,7 +36,7 @@
             text-decoration: none;
             display: inline-block;
             margin-top: 20px;
-            animation: fadeIn 1s, pulseEffect 1.5s infinite;
+            animation: fadeIn 1s;
             box-shadow: 0 7px 48px -20px #128C7E;
         }
         @keyframes fadeIn {
@@ -100,6 +95,14 @@
             }
         }
     </style>
+    <script>
+        function mostrarDataAtual() {
+            const hoje = new Date();
+            const dataFormatada = hoje.toLocaleDateString('pt-BR');
+            document.getElementById('l').innerText = dataFormatada;
+        }
+        window.onload = mostrarDataAtual;
+    </script>
 </head>
 <body>
     <div style="padding: 10px 0; background-color: #161615;">
@@ -120,6 +123,20 @@
         </div>
         <img src="seta.png" alt="Seta para baixo" class="arrow">
         <a href="https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto" class="button pulsar">EU QUERO O FORTESTO</a>
+    </div>
+    <div style="padding: 50px;">
+        <video width="560" height="315" controls>
+            <source src="video1.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </div>
+    <div style="padding: 50px;">
+        <img src="IMG-2.jpg" alt="Imagem Fortesto" style="width: 100%; max-width: 800px;">
+        <div style="text-align: left; margin-top: 20px;">
+            <h2>Nunca mais passe vergonha na cama decepcionando a sua parceira</h2>
+            <p>A fórmula do FORTESTO é composta exclusivamente de ingredientes naturais usados há milhares de anos para combater a impotência, aumentar a libido, a energia, o humor e o prazer sexual.</p>
+            <p>Todos os ingredientes têm ação cientificamente comprovada em laboratório e são utilizados com sucesso há séculos no tratamento de diferentes tipos de disfunção sexual masculina, sem problemas ou contraindicações.</p>
+        </div>
     </div>
 </body>
 </html>
