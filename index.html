@@ -94,6 +94,22 @@
                 margin-right: 50px; /* Aumenta a margem direita para separar imagem e texto */
             }
         }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+            background-color: black;
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure video covers the container */
+        }
     </style>
     <script>
         function mostrarDataAtual() {
@@ -124,8 +140,8 @@
         <img src="seta.png" alt="Seta para baixo" class="arrow">
         <a href="https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto" class="button pulsar">EU QUERO O FORTESTO</a>
     </div>
-    <div style="padding: 50px;">
-        <video width="560" height="315" controls>
+    <div class="video-container">
+        <video controls>
             <source src="video1.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
