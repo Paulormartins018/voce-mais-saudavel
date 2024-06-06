@@ -48,7 +48,6 @@
             align-items: center;
             justify-content: center;
             margin-top: 50px;
-            flex-wrap: wrap; /* Permite que os elementos sejam quebrados em linhas */
         }
         .product-img {
             width: 413px;
@@ -84,15 +83,8 @@
                 flex-direction: column; /* Altera a direção para coluna */
                 align-items: center;
             }
-            .product {
-                width: 80%; /* Ajusta a largura para melhor visualização */
-                margin: 10px 0; /* Adiciona margem superior e inferior */
-            }
             .product-img {
                 margin: 0; /* Remove a margem lateral */
-            }
-            .product img {
-                width: 150px; /* Aumenta o tamanho das imagens dos potes */
             }
         }
 
@@ -101,105 +93,20 @@
             .product-container {
                 margin-right: 50px; /* Aumenta a margem direita para separar imagem e texto */
             }
-            .product {
-                width: 23%; /* Ajusta a largura para ficar 4 em linha */
-                margin: 1%; /* Adiciona margem ao redor dos produtos */
-            }
-            .product img {
-                width: 150px; /* Aumenta o tamanho das imagens dos potes */
-            }
-        }
-
-        .video-container {
-            padding: 50px;
-            max-width: 100%;
-        }
-
-        .video-container video {
-            width: 100%;
-            height: auto;
-        }
-
-        .image-container {
-            padding: 50px;
-            text-align: left; /* Adiciona alinhamento à esquerda para o texto */
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            display: block; /* Garante que a imagem seja um bloco separado do texto */
-            margin: 0 auto 20px; /* Centraliza a imagem e adiciona margem inferior */
-        }
-
-        .image-text {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: left; /* Adiciona alinhamento à esquerda para o texto */
-        }
-
-        .products-section {
-            padding: 50px;
-            background-color: #161615;
-        }
-
-        .products-section h2 {
-            font-family: Sora, sans-serif;
-            font-size: 25px;
-            font-weight: 700;
-            animation: fadeIn 1s;
-        }
-
-        .product {
-            display: inline-block;
-            padding: 20px;
-            background-color: #1E1E1E;
-            border-radius: 15px;
-            text-align: center;
-            animation: fadeIn 1s;
-        }
-
-        .product img {
-            width: 100px;
-            height: auto;
-        }
-
-        .product-price {
-            font-size: 18px;
-            font-weight: 700;
-            margin: 10px 0;
-        }
-
-        .product-button {
-            background: #25D366; /* Cor verde do WhatsApp */
-            border: 3px solid #128C7E;
-            border-radius: 15px;
-            padding: 10px 20px;
-            color: #FFFFFF;
-            font-family: Sora, sans-serif;
-            font-size: 16px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 10px;
-            box-shadow: 0 7px 48px -20px #128C7E;
-        }
-
-        .pulsar-product {
-            animation: pulseEffect 1.5s infinite;
         }
     </style>
     <script>
         function mostrarDataAtual() {
             const hoje = new Date();
             const dataFormatada = hoje.toLocaleDateString('pt-BR');
-            document.getElementById('data').innerText = dataFormatada;
+            document.getElementById('l').innerText = dataFormatada;
         }
         window.onload = mostrarDataAtual;
     </script>
 </head>
 <body>
     <div style="padding: 10px 0; background-color: #161615;">
-        <h1 class="pulsar"><span id="data"></span></h1>
+        <h1 class="pulsar"> <span id=""></span></h1>
     </div>
     <div style="padding: 50px; background: radial-gradient(circle at top center, #FF976026 76%, #000000);">
         <h2 style="font-family: Sora, sans-serif; font-size: 18px; font-weight: 400; letter-spacing: 3px; animation: fadeIn 1s;">MAXIMIZE O SEU DESEMPENHO NA CAMA!</h2>
@@ -214,50 +121,8 @@
                 <li><i class="fas fa-check-circle"></i> ✅ SEM EFEITOS COLATERAIS</li>
             </ul>
         </div>
-    </div>
-    <div class="video-container">
-        <video controls>
-            <source src="video1.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
-    </div>
-    <div class="products-section">
-        <h2>Escolha o Seu Pacote</h2>
-        <div class="product">
-            <img src="1pt.jpg" alt="Fortesto 1 Pote">
-            <p class="product-price">12x R$19,70</p>
-            <p>À vista R$197</p>
-            <a href="https://ev.braip.com/ref?pl=plalww2e&ck=chev76xr&af=afime1206v" class="product-button">Comprar Agora</a>
-        </div>
-        <div class="product">
-            <img src="3pt.jpg" alt="Fortesto 3 Potes">
-            <p class="product-price">12x R$29,70</p>
-            <p>À vista R$297</p>
-            <a href="https://ev.braip.com/ref?pl=plav9984&ck=chev76xr&af=afime1206v" class="product-button">Comprar Agora</a>
-        </div>
-        <div class="product pulsar-product">
-            <img src="5pt.jpg" alt="Fortesto 5 Potes">
-            <p class="product-price">12x R$39,70</p>
-            <p>À vista R$397</p>
-            <a href="https://ev.braip.com/ref?pl=plalww2e&ck=chev76xr&af=afime1206v" class="product-button">Comprar Agora</a>
-        </div>
-        <div class="product">
-            <img src="10pt.jpg" alt="Fortesto 10 Potes">
-            <p class="product-price">12x R$69,70</p>
-            <p>À vista R$697</p>
-            <a href="https://ev.braip.com/ref?pl=plalww2e&ck=chev76xr&af=afime1206v" class="product-button">Comprar Agora</a>
-        </div>
-    </div>
-    <div class="">
-        <img src="" alt="">
-        <div class="">
-            <p></p>
-        </div>
-    </div>
-    <div style="background: radial-gradient(circle at top center, #FF976026 76%, #000000); padding: 50px; text-align: center;">
-        <h1 class="pulsar" style="font-family: Sora, sans-serif; font-size: 25px; font-weight: 400; text-transform: uppercase;">Fale com um Especialista</h1>
-        <img src="seta.png" alt="Seta para baixo" class="arrow pulsar">
-        <a href="https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto" class="button pulsar">Clique Aqui</a>
+        <img src="seta.png" alt="Seta para baixo" class="arrow">
+        <a href="https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto" class="button pulsar">EU QUERO O FORTESTO</a>
     </div>
 </body>
 </html>
