@@ -48,6 +48,7 @@
             align-items: center;
             justify-content: center;
             margin-top: 50px;
+            flex-wrap: wrap; /* Permite que os elementos sejam quebrados em linhas */
         }
         .product-img {
             width: 413px;
@@ -83,16 +84,12 @@
                 flex-direction: column; /* Altera a direção para coluna */
                 align-items: center;
             }
+            .product {
+                width: 80%; /* Ajusta a largura para melhor visualização */
+                margin: 10px 0; /* Adiciona margem superior e inferior */
+            }
             .product-img {
                 margin: 0; /* Remove a margem lateral */
-            }
-            .product {
-                width: 100%;
-                margin: 10px 0;
-            }
-            .product img {
-                width: 100px;
-                height: auto;
             }
         }
 
@@ -100,6 +97,10 @@
         @media (min-width: 769px) {
             .product-container {
                 margin-right: 50px; /* Aumenta a margem direita para separar imagem e texto */
+            }
+            .product {
+                width: 23%; /* Ajusta a largura para ficar 4 em linha */
+                margin: 1%; /* Adiciona margem ao redor dos produtos */
             }
         }
 
@@ -145,8 +146,6 @@
 
         .product {
             display: inline-block;
-            width: 23%;
-            margin: 1%;
             padding: 20px;
             background-color: #1E1E1E;
             border-radius: 15px;
@@ -234,23 +233,28 @@
             <img src="5pt.jpg" alt="Fortesto 5 Potes">
             <p class="product-price">12x R$39,70</p>
             <p>À vista R$397</p>
-            <a href="https://ev.braip.com/ref?pl=plapqu5q&ck=chev76xr&af=afime1206v" class="product-button">Comprar Agora</a>
+            <a href="https://ev.braip.com/ref?pl=plalww2e&ck=chev76xr&af=afime1206v" class="product-button">Comprar Agora</a>
         </div>
         <div class="product">
             <img src="10pt.jpg" alt="Fortesto 10 Potes">
             <p class="product-price">12x R$69,70</p>
             <p>À vista R$697</p>
-            <a href="https://ev.braip.com/ref?pl=pl3ca9bp&ck=chev76xr&af=afime1206v" class="product-button">Comprar Agora</a>
+            <a href="https://ev.braip.com/ref?pl=plalww2e&ck=chev76xr&af=afime1206v" class="product-button">Comprar Agora</a>
         </div>
     </div>
-    <div>
-        <h2><b>Fale com um Especialista</b></h2>
-        <img src="seta.png" alt="Seta para baixo" class="arrow">
-        <a href="https://api.whatsapp.com/send?phone=1234567890" class="button">Clique Aqui</a>
+    <div class="">
+        <img src="" alt="">
+        <div class="">
+            <p></p>
+        </div>
+    </div>
+    <div style="background: radial-gradient(circle at top center, #FF976026 76%, #000000); padding: 50px; text-align: center;">
+        <h1 class="pulsar" style="font-family: Sora, sans-serif; font-size: 25px; font-weight: 400; text-transform: uppercase;">Fale com um Especialista</h1>
+        <img src="seta.png" alt="Seta para baixo" class="arrow pulsar">
+        <a href="https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto" class="button pulsar">Clique Aqui</a>
     </div>
 </body>
 </html>
-
 
 
 
