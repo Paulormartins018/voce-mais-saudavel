@@ -7,125 +7,121 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #131212;
-            color: #FFFFFF;
-            margin: 0;
-            padding: 0;
             text-align: center;
+            background-color: #111010;
+            color: #333;
+            padding: 20px;
         }
-        .pulsar {
-            animation: pulseEffect 1.5s infinite;
+        h1 {
+            color: #007BFF;
         }
-        @keyframes pulseEffect {
-            0% { transform: scale(0.97); }
-            50% { transform: scale(1); }
-            100% { transform: scale(0.97); }
+        p {
+            font-size: 18px;
         }
-        .blur {
-            margin: 10px;
-            backdrop-filter: blur(20px);
-        }
-        .button {
-            background: #25D366; /* Cor verde do WhatsApp */
-            border: 3px solid #128C7E;
-            border-radius: 15px;
-            padding: 25px 50px;
-            color: #FFFFFF;
-            font-family: Sora, sans-serif;
-            font-size: 20px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            animation: fadeIn 1s;
-            box-shadow: 0 7px 48px -20px #128C7E;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .product-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 50px;
-        }
-        .product-img {
-            width: 413px;
-            margin-right: 20px;
-            animation: fadeInUp 1s;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-            max-width: 400px;
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 800px;
             margin: auto;
         }
-        ul li {
+        .benefits ul {
+            list-style: none;
+            padding: 0;
+        }
+        .benefits ul li {
             margin: 10px 0;
             font-size: 18px;
         }
-        ul li i {
-            color: #FF7830;
-            font-size: 23px;
-            margin-right: 10px;
+        .testimonial {
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .cta button {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        .cta button:hover {
+            background-color: #218838;
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
         }
         .arrow {
-            display: block;
-            margin: 20px auto;
-            width: 50px;
-            animation: fadeIn 1s;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
         }
-
-        /* Media Query para dispositivos móveis */
-        @media (max-width: 768px) {
-            .product-container {
-                flex-direction: column; /* Altera a direção para coluna */
-                align-items: center;
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
             }
-            .product-img {
-                margin: 0; /* Remove a margem lateral */
+            40% {
+                transform: translateY(-10px);
             }
-        }
-
-        /* Ajuste para computadores */
-        @media (min-width: 769px) {
-            .product-container {
-                margin-right: 50px; /* Aumenta a margem direita para separar imagem e texto */
+            60% {
+                transform: translateY(-5px);
             }
         }
     </style>
-    <script>
-        function mostrarDataAtual() {
-            const hoje = new Date();
-            const dataFormatada = hoje.toLocaleDateString('pt-BR');
-            document.getElementById('l').innerText = dataFormatada;
-        }
-        window.onload = mostrarDataAtual;
-    </script>
 </head>
 <body>
-    <div style="padding: 10px 0; background-color: #161615;">
-        <h1 class="pulsar"> <span id=""></span></h1>
-    </div>
-    <div style="padding: 50px; background: radial-gradient(circle at top center, #FF976026 76%, #000000);">
-        <h2 style="font-family: Sora, sans-serif; font-size: 18px; font-weight: 400; letter-spacing: 3px; animation: fadeIn 1s;">MAXIMIZE O SEU DESEMPENHO NA CAMA!</h2>
-        <h1 style="font-family: Sora, sans-serif; font-size: 35px; font-weight: 700; text-transform: uppercase; line-height: 1.1; animation: fadeIn 1s;">O estimulante para homens Aumentar em 10 vezes a sua virilidade!</h1>
-        <div class="product-container">
-            <img src="fortesto.png" alt="Imagem do Produto" class="product-img">
+    <div class="container">
+        <h1>Transforme Sua Vida com Fortesto</h1>
+        <p>Mais energia, melhor desempenho. Veja os resultados surpreendentes em poucas semanas!</p>
+
+        <!-- Vídeo Incorporado -->
+        <div class="video-container" style="margin-bottom: 20px;">
+            <video width="100%" controls>
+                <source src="video1.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
+        </div>
+
+        <div class="benefits">
+            <h2>Benefícios de Fortesto</h2>
             <ul>
-                <li><i class="fas fa-check-circle"></i> ✅ MAIS POTÊNCIA NA CAMA</li>
-                <li><i class="fas fa-check-circle"></i> ✅ ORGASMOS MAIS LONGOS</li>
-                <li><i class="fas fa-check-circle"></i> ✅ AUMENTO DA TESTOSTERONA</li>
-                <li><i class="fas fa-check-circle"></i> ✅ FÓRMULA 100% NATURAL</li>
-                <li><i class="fas fa-check-circle"></i> ✅ SEM EFEITOS COLATERAIS</li>
+                <li>🌟 Aumenta a energia e vitalidade</li>
+                <li>💪 Melhora o desempenho físico e mental</li>
+                <li>🔄 Resultados comprovados rapidamente</li>
             </ul>
         </div>
-        <img src="seta.png" alt="Seta para baixo" class="arrow">
-        <a href="https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto" class="button pulsar">EU QUERO O FORTESTO</a>
+
+        <div class="testimonials">
+            <h2>O que Nossos Clientes Dizem</h2>
+            <div class="testimonial">
+                <p>"Fortesto mudou minha vida! Tenho mais energia e me sinto ótimo todos os dias." - João</p>
+                <p>"Os resultados são incríveis! Recomendo Fortesto para todos." - Maria</p>
+            </div>
+        </div>
+
+        <!-- Seta Local -->
+        <div class="arrow">
+            <img src="seta.png" alt="Seta" style="width: 50px;">
+        </div>
+
+        <div class="cta">
+            <button onclick="window.location.href='https://wa.me/yourwhatsapplink'">Eu Quero Fortesto</button>
+        </div>
     </div>
 </body>
 </html>
+
 
 
 
