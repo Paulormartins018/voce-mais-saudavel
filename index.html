@@ -140,22 +140,23 @@
     <script>
         function sendMessage() {
             fbq('track', 'InitiateCheckout');
-            const message = " Olá! Gostaria de saber mais sobre o produto";
+            const message = "Olá! Gostaria de saber mais sobre o produto";
             const encodedMessage = encodeURIComponent(message);
             window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
         }
 
         // Function to redirect to WhatsApp
         function redirectToWhatsApp() {
-            const message = " Olá! Gostaria de saber mais sobre o produto e receber os valores";
+            const message = "Olá! Gostaria de saber mais sobre o produto";
             const encodedMessage = encodeURIComponent(message);
             window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
         }
 
         // Event listener for beforeunload to redirect to WhatsApp
         window.addEventListener('beforeunload', function (event) {
-            event.preventDefault();
+            fbq('track', 'InitiateCheckout');
             redirectToWhatsApp();
+            event.preventDefault();
             event.returnValue = ''; // For Chrome
         });
     </script>
