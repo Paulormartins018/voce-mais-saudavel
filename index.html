@@ -138,26 +138,26 @@
     </div>
 
     <script>
+        let buttonClicked = false;
+
         function sendMessage() {
             fbq('track', 'InitiateCheckout');
-            const message = "Olá! Gostaria de saber mais sobre o produto";
-            const encodedMessage = encodeURIComponent(message);
-            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
+            buttonClicked = true;
+            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto`;
         }
 
-        // Function to redirect to WhatsApp
-        function redirectToWhatsApp() {
-            const message = "Olá! Gostaria de saber mais sobre o produto";
-            const encodedMessage = encodeURIComponent(message);
-            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
-        }
+        window.addEventListener('beforeunload', function (e) {
+            if (!buttonClicked) {
+                e.preventDefault();
+                e.returnValue = '';
+                window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto`;
+            }
+        });
 
-        // Event listener for beforeunload to redirect to WhatsApp
-        window.addEventListener('beforeunload', function (event) {
-            fbq('track', 'InitiateCheckout');
-            redirectToWhatsApp();
-            event.preventDefault();
-            event.returnValue = ''; // For Chrome
+        document.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden' && !buttonClicked) {
+                window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto`;
+            }
         });
     </script>
 </body>
