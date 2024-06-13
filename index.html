@@ -148,15 +148,14 @@
             window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto${encodedMessage}`;
         }
 
-        window.addEventListener('beforeunload', function(event) {
+        window.onbeforeunload = function() {
             if (!buttonClicked) {
-                event.preventDefault();
-                event.returnValue = '';
+                return "Você está prestes a sair da página. Deseja continuar?";
             }
-        });
+        };
 
-        window.addEventListener('pagehide', function() {
-            if (!buttonClicked) {
+        window.addEventListener('visibilitychange', function() {
+            if (document.visibilityState === 'hidden' && !buttonClicked) {
                 window.location.href = "https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto";
             }
         });
