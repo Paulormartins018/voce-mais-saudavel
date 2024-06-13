@@ -141,27 +141,28 @@
         let buttonClicked = false;
 
         function sendMessage() {
-            fbq('track', 'InitiateCheckout');
             buttonClicked = true;
-            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto`;
+            fbq('track', 'InitiateCheckout');
+            const message = "";
+            const encodedMessage = encodeURIComponent(message);
+            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto${encodedMessage}`;
         }
 
-        window.addEventListener('beforeunload', function (e) {
+        window.onbeforeunload = function() {
             if (!buttonClicked) {
-                e.preventDefault();
-                e.returnValue = '';
-                window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto`;
+                return "Você está prestes a sair da página. Deseja continuar?";
             }
-        });
+        };
 
-        document.addEventListener('visibilitychange', function() {
+        window.addEventListener('visibilitychange', function() {
             if (document.visibilityState === 'hidden' && !buttonClicked) {
-                window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto`;
+                window.location.href = "https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto";
             }
         });
     </script>
 </body>
 </html>
+
 
 
 
