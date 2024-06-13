@@ -81,16 +81,16 @@
     </style>
     <!-- Meta Pixel Code -->
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1493974344537927');
-    fbq('track', 'PageView');
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1493974344537927');
+        fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1493974344537927&ev=PageView&noscript=1"
@@ -143,19 +143,20 @@
         function sendMessage() {
             buttonClicked = true;
             fbq('track', 'InitiateCheckout');
-            const message = "";
+            const message = "Olá! Gostaria de saber mais sobre o produto.";
             const encodedMessage = encodeURIComponent(message);
-            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto${encodedMessage}`;
+            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
         }
 
-        window.onbeforeunload = function() {
+        window.addEventListener('beforeunload', function(event) {
             if (!buttonClicked) {
-                return "Você está prestes a sair da página. Deseja continuar?";
+                event.preventDefault();
+                event.returnValue = '';
             }
-        };
+        });
 
-        window.addEventListener('visibilitychange', function() {
-            if (document.visibilityState === 'hidden' && !buttonClicked) {
+        window.addEventListener('pagehide', function() {
+            if (!buttonClicked) {
                 window.location.href = "https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto";
             }
         });
