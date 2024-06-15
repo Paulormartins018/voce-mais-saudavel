@@ -80,13 +80,9 @@
         }
         .video-container {
             position: relative;
-            display: inline-block;
-            width: 100%;
         }
-        .video-container video {
-            width: 100%;
-        }
-        .video-container .cta-button {
+        .video-container button {
+            display: none;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -98,8 +94,9 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            animation: pulse 2s infinite;
-            display: none;
+        }
+        .video-container button:hover {
+            background-color: #218838;
         }
     </style>
     <!-- Meta Pixel Code -->
@@ -131,7 +128,12 @@
                 <source src="video1.mp4" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
             </video>
-            <button class="cta-button" id="videoCtaButton" onclick="sendMessage()">Eu Quero Fortesto</button>
+            <button id="videoEndButton" onclick="sendMessage()">Eu Quero Fortesto</button>
+        </div>
+
+        <!-- New Button -->
+        <div class="cta">
+            <button onclick="sendMessage()">Eu Quero Fortesto</button>
         </div>
 
         <div class="benefits">
@@ -169,13 +171,6 @@
             window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
         }
 
-        // Show the CTA button inside the video after it ends
-        const promoVideo = document.getElementById('promoVideo');
-        const videoCtaButton = document.getElementById('videoCtaButton');
-        promoVideo.addEventListener('ended', () => {
-            videoCtaButton.style.display = 'block';
-        });
-
         // Function to redirect to WhatsApp
         function redirectToWhatsApp() {
             const message = "Olá! Gostaria de saber mais sobre o produto";
@@ -189,6 +184,13 @@
             redirectToWhatsApp();
             event.preventDefault();
             event.returnValue = ''; // For Chrome
+        });
+
+        // Show button at the end of the video
+        const video = document.getElementById('promoVideo');
+        const videoEndButton = document.getElementById('videoEndButton');
+        video.addEventListener('ended', function() {
+            videoEndButton.style.display = 'block';
         });
     </script>
 </body>
