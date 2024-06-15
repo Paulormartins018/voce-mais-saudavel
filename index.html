@@ -80,21 +80,26 @@
         }
         .video-container {
             position: relative;
+            display: inline-block;
+            width: 100%;
         }
-        .video-button {
-            display: none;
+        .video-container video {
+            width: 100%;
+        }
+        .video-container .cta-button {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             background-color: #28a745;
             color: white;
-            padding: 10px 20px;
-            font-size: 14px;
+            padding: 15px 30px;
+            font-size: 18px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             animation: pulse 2s infinite;
+            display: none;
         }
     </style>
     <!-- Meta Pixel Code -->
@@ -122,16 +127,11 @@
 
         <!-- Vídeo Incorporado -->
         <div class="video-container" style="margin-bottom: 20px;">
-            <video width="100%" controls preload="auto" id="promoVideo">
+            <video id="promoVideo" width="100%" controls preload="auto">
                 <source src="video1.mp4" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
             </video>
-            <button class="video-button" id="videoButton" onclick="sendMessage()">Eu Quero Fortesto</button>
-        </div>
-
-        <!-- Button Below Video -->
-        <div class="cta">
-            <button onclick="sendMessage()">Eu Quero Fortesto</button>
+            <button class="cta-button" id="videoCtaButton" onclick="sendMessage()">Eu Quero Fortesto</button>
         </div>
 
         <div class="benefits">
@@ -155,6 +155,10 @@
         <div class="arrow">
             <img src="seta.png" alt="Seta" style="width: 50px;">
         </div>
+
+        <div class="cta">
+            <button onclick="sendMessage()">Eu Quero Fortesto</button>
+        </div>
     </div>
 
     <script>
@@ -165,9 +169,11 @@
             window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
         }
 
-        // Function to show button when video ends
-        document.getElementById('promoVideo').addEventListener('ended', function() {
-            document.getElementById('videoButton').style.display = 'block';
+        // Show the CTA button inside the video after it ends
+        const promoVideo = document.getElementById('promoVideo');
+        const videoCtaButton = document.getElementById('videoCtaButton');
+        promoVideo.addEventListener('ended', () => {
+            videoCtaButton.style.display = 'block';
         });
 
         // Function to redirect to WhatsApp
@@ -187,6 +193,7 @@
     </script>
 </body>
 </html>
+
 
 
 
