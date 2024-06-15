@@ -78,6 +78,27 @@
                 transform: translateY(-5px);
             }
         }
+        .video-container {
+            position: relative;
+        }
+        .video-container button {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        .video-container button:hover {
+            background-color: #218838;
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -104,10 +125,16 @@
 
         <!-- Vídeo Incorporado -->
         <div class="video-container" style="margin-bottom: 20px;">
-            <video width="100%" controls preload="auto">
+            <video id="promoVideo" width="100%" controls preload="auto">
                 <source src="video1.mp4" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
             </video>
+            <button id="videoEndButton" onclick="sendMessage()">Eu Quero Fortesto</button>
+        </div>
+
+        <!-- New Button -->
+        <div class="cta">
+            <button onclick="sendMessage()">Eu Quero Fortesto</button>
         </div>
 
         <div class="benefits">
@@ -138,31 +165,37 @@
     </div>
 
     <script>
-        let buttonClicked = false;
-
         function sendMessage() {
-            buttonClicked = true;
             fbq('track', 'InitiateCheckout');
-            const message = "";
+            const message = "Olá! Gostaria de saber mais sobre o produto";
             const encodedMessage = encodeURIComponent(message);
-            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto${encodedMessage}`;
+            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
         }
 
-        window.onbeforeunload = function() {
-            if (!buttonClicked) {
-                return "Você está prestes a sair da página. Deseja continuar?";
-            }
-        };
+        // Function to redirect to WhatsApp
+        function redirectToWhatsApp() {
+            const message = "Olá! Gostaria de saber mais sobre o produto";
+            const encodedMessage = encodeURIComponent(message);
+            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
+        }
 
-        window.addEventListener('visibilitychange', function() {
-            if (document.visibilityState === 'hidden' && !buttonClicked) {
-                window.location.href = "https://api.whatsapp.com/send?phone=5512987019078&text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20produto";
-            }
+        // Event listener for beforeunload to redirect to WhatsApp
+        window.addEventListener('beforeunload', function (event) {
+            fbq('track', 'InitiateCheckout');
+            redirectToWhatsApp();
+            event.preventDefault();
+            event.returnValue = ''; // For Chrome
+        });
+
+        // Show button at the end of the video
+        const video = document.getElementById('promoVideo');
+        const videoEndButton = document.getElementById('videoEndButton');
+        video.addEventListener('ended', function() {
+            videoEndButton.style.display = 'block';
         });
     </script>
 </body>
 </html>
-
 
 
 
