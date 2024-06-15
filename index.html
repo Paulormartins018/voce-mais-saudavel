@@ -82,7 +82,6 @@
             position: relative;
         }
         .video-container button {
-            display: none;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -94,68 +93,77 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            animation: pulse 2s infinite; /* Adicionado para fazer o botão pulsar */
         }
         .video-container button:hover {
             background-color: #218838;
         }
     </style>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '1493974344537927');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1493974344537927&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
 </head>
 <body>
     <div class="container">
-        <h1>Transforme Sua Vida com Fortesto</h1>
+        
+   
+<h1>Transforme Sua Vida com Fortesto</h1>
         <p>Mais energia, melhor desempenho. Veja os resultados surpreendentes em poucas semanas!</p>
 
         <!-- Vídeo Incorporado -->
         <div class="video-container" style="margin-bottom: 20px;">
             <video id="promoVideo" width="100%" controls preload="auto">
-                <source src="video1.mp4" type="video/mp4">
+                
+             
+<source src="video1.mp4" type="video/mp4">
                 Seu navegador não suporta a tag de vídeo.
-            </video>
+            
+                Seu navegador não suporta a tag 
+
+                
+</video>
             <button id="videoEndButton" onclick="sendMessage()">Eu Quero Fortesto</button>
         </div>
 
-        <!-- New Button -->
+        
+
+        <
+<!-- New Button -->
         <div class="cta">
             <button onclick="sendMessage()">Eu Quero Fortesto</button>
-        </div>
+        
+     
+</div>
 
         <div class="benefits">
             <h2>Benefícios de Fortesto</h2>
-            <ul>
+            
+        
+<ul>
                 <li>🌟 Aumenta a energia e vitalidade</li>
                 <li>💪 Melhora o desempenho físico e mental</li>
-                <li>🔄 Resultados comprovados rapidamente</li>
+                
+          
+<li>🔄 Resultados comprovados rapidamente</li>
             </ul>
-        </div>
+        
+     
+</div>
 
         <div class="testimonials">
             <h2>O que Nossos Clientes Dizem</h2>
             <div class="testimonial">
                 <p>"Fortesto mudou minha vida! Tenho mais energia e me sinto ótimo todos os dias." - João</p>
-                <p>"Os resultados são incríveis! Recomendo Fortesto para todos." - Fernando</p>
+                
+       
+<p>"Os resultados são incríveis! Recomendo Fortesto para todos." - Fernando</p>
             </div>
-        </div>
+        
+    
+</div>
 
         <!-- Seta Local -->
         <div class="arrow">
-            <img src="seta.png" alt="Seta" style="width: 50px;">
+            
+           
+<img src="seta.png" alt="Seta" style="width: 50px;">
         </div>
 
         <div class="cta">
@@ -163,7 +171,31 @@
         </div>
     </div>
 
-    <script>
+    
+
+<script>
+        function sendMessage() {
+            fbq('track', '
+
+        function sendMessage() {
+            fbq('track', 'InitiateCheckout');
+            const message = "Olá! Gostaria de saber mais sobre o
+
+        function sendMessage() {
+            fbq('track', 'InitiateCheckout');
+            const message = "Olá! Gostaria de saber 
+
+        function sendMessage() {
+            fbq('track', 'InitiateCheckout');
+            const message = "Olá! Gostaria de saber mais sobre o produto";
+            const encodedMessage = encodeURIComponent(message);
+            window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
+        }
+
+        // Function to redirect to WhatsApp
+        function redirectToWhatsApp() {
+            const message = "Olá! 
+
         function sendMessage() {
             fbq('track', 'InitiateCheckout');
             const message = "Olá! Gostaria de saber mais sobre o produto";
@@ -195,8 +227,6 @@
     </script>
 </body>
 </html>
-
-
 
 
 
