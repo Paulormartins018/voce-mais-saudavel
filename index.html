@@ -145,14 +145,14 @@
     <script>
         function sendMessage() {
             fbq('track', 'InitiateCheckout');
-            const message = "Olá! Gostaria de saber mais sobre o produto";
+            const message = "Olá! Gostaria de saber mais sobre o produto e também receber os valores.";
             const encodedMessage = encodeURIComponent(message);
             window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
         }
 
         // Function to redirect to WhatsApp
         function redirectToWhatsApp() {
-            const message = "Olá! Gostaria de saber mais sobre o produto";
+            const message = "Olá! Gostaria de saber mais sobre o produto e também receber os valores.";
             const encodedMessage = encodeURIComponent(message);
             window.location.href = `https://api.whatsapp.com/send?phone=5512987019078&text=${encodedMessage}`;
         }
